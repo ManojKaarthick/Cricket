@@ -94,17 +94,19 @@ public class Step_class extends Base_class {
     public void click_the_macbook_air() {
         implicitwait(driver);
 
-        WebElement ele1 = driver.findElement(By.linkText("MacBook air"));
+        WebElement ele1 = driver.findElement(By.xpath("//a[text()='MacBook air']"));
+          ele1.click();
+       // JavascriptExecutor js=(JavascriptExecutor) driver;
+//       js.executeScript("arguments[0].click()",ele1);
 
-        JavascriptExecutor js=(JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click()",ele1);
 
-//        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(25));
-//       WebElement click= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='MacBook air']")));
+
+        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(25));
+       WebElement click= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='MacBook air']")));
 //
 //
 //
-//        clk(pc.getMacbook());
+        //clk(pc.getMacbook());
 
     }
     @Then("click Add to cart button")

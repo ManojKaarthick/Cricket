@@ -3,6 +3,7 @@ package Runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -21,5 +22,11 @@ public class Runner_Class {
     public static void browseropen(){
 
         driver =new ChromeDriver();
+    }
+
+    @AfterClass
+
+    public static void browserclose(){
+        driver.close();
     }
 }
